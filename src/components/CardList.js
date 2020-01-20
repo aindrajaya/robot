@@ -5,7 +5,7 @@ const CardList = ({Robots}) => {
     return(
         <div>
             {
-                Robots.map((i) => {
+                Robots.map((i) => { //delete user which can call api
                     return (
                         <Card 
                             key={i} 

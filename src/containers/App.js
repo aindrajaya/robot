@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
+import {Robots} from '../components/Robots'; //using robot local
 
 class App extends Component {
     //it declares two states: robot and searchfield
@@ -10,15 +11,16 @@ class App extends Component {
     constructor(){
         super()
         this.state = { //this states is what changes in an app
-            Robots: [],
+            Robots: Robots,
             searchfield: '' //searchfield is always empty
         }
     }
     
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(users => this.setState({Robots: users}));
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        // .then(response => response.json())
+        // .then(users => this.setState({Robots: users}));
+        this.setState({Robots: Robots})
     }
 
     onSearchChange = (event) => {
